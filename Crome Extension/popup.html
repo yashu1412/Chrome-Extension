@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cyby 2.0</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <style>
+    /* Base Styles */
+    body {
+      width: 100%;
+      width: 400px;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+      background-image: linear-gradient(120deg, #202020 0%, #383839 100%);
+      background-size: 200% 200%;
+      color: white;
+      font-style: italic;
+      animation: gradientShift 10s ease infinite;
+      transition: background 0.5s ease, color 0.5s ease;
+    }
+
+    /* Gradient background animations */
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Button styles */
+    button {
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid transparent;
+      border-radius: 20px;
+    }
+
+    button:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    /* List styling */
+    #urlList, #secretList {
+      max-height: 300px;
+      overflow-y: auto;
+      list-style-type: none;
+      margin-top: 20px;
+      padding: 0;
+      font-style: italic;
+    }
+
+    #urlList li, #secretList li {
+      padding: 10px;
+      font-size: 1rem;
+      border-bottom: 1px solid #ddd;
+      transition: background-color 0.3s ease;
+    }
+
+    #urlList li:hover, #secretList li:hover {
+      background-color: #717070;
+    }
+
+    /* Header styles */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .header h5 {
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .header .author {
+      font-size: 12px;
+      color: #888;
+    }
+
+    /* Hidden section */
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h5>Cyby 2.0</h5>
+    <div class="author">Author: Yashpalsingh Pawara</div>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <button id="urlsTab" class="btn waves-effect waves-light blue darken-1">URLs</button>
+  <button id="secretsTab" class="btn waves-effect waves-light purple darken-1">Secrets</button>
+
+  <!-- URLs Section -->
+  <div id="urlsSection" class="section">
+    <button id="downloadUrls" class="btn green waves-effect waves-light">Download URLs</button>
+    <button id="clearUrls" class="btn red waves-effect waves-light">Clear URLs</button>
+    <ul id="urlList" class="collection"></ul>
+  </div>
+
+  <!-- Secrets Section -->
+  <div id="secretsSection" class="section hidden">
+    <button id="clearSecrets" class="btn red waves-effect waves-light">Clear Secrets</button>
+    <ul id="secretList" class="collection"></ul>
+  </div>
+
+  <script src="popup.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+</body>
+</html>

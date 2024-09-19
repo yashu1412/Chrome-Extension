@@ -1,0 +1,36 @@
+{
+    "manifest_version": 3,
+    "name": "Cyby 2.0",
+    "version": "1.0",
+    "description": "Advanced URL and secret collection from open tabs, web requests, and DevTools.",
+    "permissions": [
+      "tabs",
+      "activeTab",
+      "storage",
+      "webRequest",
+      "webNavigation",
+      "declarativeNetRequest"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "devtools_page": "devtools.html",
+    "action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "16": "./asstes/icon16 (3).png",
+        "48": "./asstes/icon48.png",
+        "128": "./asstes/icon128.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "<all_urls>"
+    ]
+  }
+  
